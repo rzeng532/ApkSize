@@ -103,7 +103,11 @@ def show_apk_size_bar(data, fileName):
 
     data.plot(kind='bar', stacked=True, alpha=0.7)
     # plt.xticks(rotation=45)
-    # plt.xlabel('Date')
+    if fileName.find('apk') >= 0:
+        plt.xlabel('Android')
+    elif fileName.find('ipa') >= 0:
+        plt.xlabel('iOS')
+
     plt.ylabel('APP Size (Kb)')
     plt.title('APP Size Dynamic Chart')
 
